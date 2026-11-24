@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rakesh | Startup & Entrepreneur</title>
+
+<style>
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #010205;
+    color: rgb(255, 251, 251);
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b1220;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #ddd;
+    margin-left: 28px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 80px 10%;
+
+    background: radial-gradient(
+        circle at 80% 40%,
+        #12345a,
+        #080d18 60%
+    );
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.tag {
+    color: #38bdf8;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.hero h2 {
+    font-size: 24px;
+    color: #cbd5e1;
+}
+
+.hero p {
+    color: #94a3b8;
+    line-height: 1.9;
+    margin: 25px 0;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #0284c7;
+    color: white;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #38bdf8;
+    transform: translateY(-4px);
+}
+
+
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 430px;
+    object-fit: cover;
+    object-position: center 25%;
+    border: 3px solid #38bdf8;
+    border-radius: 20px;
+    box-shadow: 0 0 40px #0284c755;
+}
+
+
+
+section:not(.hero) {
+    padding: 90px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #38bdf8;
+}
+
+.subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 50px;
+}
+
+
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: #aab5c5;
+    line-height: 2;
+    font-size: 17px;
+}
+
+
+
+.qualities {
+    background: #0c1423;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 30px;
+    background: #111e31;
+    border: 1px solid #233b58;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 30px #0284c722;
+}
+
+.card .icon {
+    font-size: 38px;
+}
+
+.card h3 {
+    margin: 18px 0 12px;
+    color: #38bdf8;
+}
+
+.card p {
+    color: #aab5c5;
+    line-height: 1.8;
+}
+
+
+
+.interests {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.interests span {
+    padding: 14px 22px;
+    border: 1px solid #25658d;
+    border-radius: 30px;
+    color: #7dd3fc;
+    transition: 0.3s;
+}
+
+.interests span:hover {
+    background: #0284c7;
+    color: white;
+}
+
+
+
+.contact {
+    background: #0c1423;
+    text-align: center;
+}
+
+.contact p {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #050914;
+    color: #94a3b8;
+    line-height: 2;
+}
+
+footer span {
+    color: #38bdf8;
+}
+
+
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px 6%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #0b1220;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 13px 0;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .hero-image img {
+        width: 260px;
+        height: 320px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section:not(.hero) {
+        padding: 65px 7%;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+}
+
+
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 280px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<header>
+
+    <div class="logo">RAKESH.</div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+
+        <a href="#home" onclick="closeMenu()">Home</a>
+
+        <a href="#about" onclick="closeMenu()">About</a>
+
+        <a href="#qualities" onclick="closeMenu()">Qualities</a>
+
+        <a href="#interests" onclick="closeMenu()">Interests</a>
+
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+
+    </nav>
+
+</header>
+
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            STARTUP ENTHUSIAST | FUTURE ENTREPRENEUR
+        </div>
+
+        <h1>
+            Hi, I'm <span>Rakesh.</span>
+        </h1>
+
+        <h2>
+            Think Big. Start Small. Build Smart.
+        </h2>
+
+        <p>
+            Exploring Startups, Business Ideas,
+            Entrepreneurship and Innovation.
+
+            I believe in creative thinking,
+            solving problems and continuous learning
+            to build a better future.
+        </p>
+
+        <a href="#about" class="btn">
+            Explore My Journey →
+        </a>
+
+    </div>
+
+    
+
+    <div class="hero-image">
+
+        <img src="rakesh.jpg.jpeg" alt="Rakesh Profile Photo">
+
+    </div>
+
+</section>
+
+
+
+
+<section id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <p class="subtitle">
+        My Journey & Vision
+    </p>
+
+    <div class="about-content">
+
+        I am Rakesh, an aspiring entrepreneur passionate
+        about startups, business strategies and innovation.
+
+        <br><br>
+
+        I enjoy exploring new business ideas, understanding
+        market opportunities and learning how businesses grow.
+
+        <br><br>
+
+        My vision is to develop an entrepreneurial mindset,
+        create meaningful solutions and share valuable
+        business knowledge with others.
+
+    </div>
+
+</section>
+
+
+
+
+<section class="qualities" id="qualities">
+
+    <h2 class="section-title">
+        My Core <span>Qualities</span>
+    </h2>
+
+    <p class="subtitle">
+        The mindset behind my entrepreneurial journey
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🚀</div>
+
+            <h3>Entrepreneur Mindset</h3>
+
+            <p>
+                Thinking about opportunities,
+                taking initiative and creating value.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💡</div>
+
+            <h3>Creative Thinking</h3>
+
+            <p>
+                Exploring innovative ideas and
+                finding new ways to solve problems.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📊</div>
+
+            <h3>Business Strategy</h3>
+
+            <p>
+                Learning business models, marketing,
+                planning and growth strategies.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">👑</div>
+
+            <h3>Leadership</h3>
+
+            <p>
+                Building teamwork, communication
+                and decision-making abilities.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🧠</div>
+
+            <h3>Problem Solving</h3>
+
+            <p>
+                Understanding challenges and
+                finding practical solutions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📚</div>
+
+            <h3>Continuous Learning</h3>
+
+            <p>
+                Learning new skills, gaining knowledge
+                and improving every day.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section id="interests">
+
+    <h2 class="section-title">
+        My <span>Interests</span>
+    </h2>
+
+    <p class="subtitle">
+        Topics I love exploring
+    </p>
+
+    <div class="interests">
+
+        <span>Startup Ideas</span>
+
+        <span>Business Models</span>
+
+        <span>Seed Funding</span>
+
+        <span>Investors</span>
+
+        <span>Digital Marketing</span>
+
+        <span>Business Growth</span>
+
+        <span>Innovation</span>
+
+        <span>inventor</span>
+
+        <span>product development</span>
+
+        <span>product design</span>
+
+        <span>web development</span>
+
+        <span>hardware prototyping</span>
+
+
+    </div>
+
+</section>
+
+
+
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Let's <span>Connect</span>
+    </h2>
+
+     <p>
+        Have a startup idea or business discussion?
+        Let's connect and grow together.
+    </p>
+
+    <a
+      href="https://wa.me/919891425452?text=Hello%20Rakesh,%20I%20visited%20your%20portfolio."
+      target="_blank"
+      class="btn">
+
+      Let's Connect on WhatsApp →
+
+    </a>
+</section>
+
+
+
+
+<footer>
+
+    <p>
+        © 2026 <span>Rakesh</span>. All Rights Reserved.
+    </p>
+
+    <p>
+        Built with Passion for Startups & Innovation.
+    </p>
+
+</footer>
+
+
+
+
+<script>
+
+function toggleMenu() {
+
+    document.getElementById("navbar")
+    .classList.toggle("active");
+
+}
+
+function closeMenu() {
+
+    document.getElementById("navbar")
+    .classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>
